@@ -6,6 +6,15 @@ use App\Models\Post;
 
 class PostController extends Controller
 {
+
+    public function index(){
+        $posts = Post::all();
+        return view('posts', compact('posts'));
+    }
+
+
+
+    /*
     public function index(){
         $post = Post::find(2);
         dump($post->title);
@@ -25,6 +34,7 @@ class PostController extends Controller
             dump('Только опубликованные id -  ' . $post->id);
         }
     }
+
 //Добавление поста в базу
     public function create(){
         $postsArr = [
@@ -58,7 +68,7 @@ class PostController extends Controller
         dd('created, hurra');
     }*/
 
-
+/*
  //Обновление поста в базе
     public function update(){
         $post = Post::find(5);
@@ -121,5 +131,5 @@ class PostController extends Controller
         dump($post->image);
     //Так как заголовки одинаковый(то есть этот заголовок есть) он редактирует; если нет то создает новый
     }
-
+*/
 }
